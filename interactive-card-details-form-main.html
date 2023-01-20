@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="interactive-card-details-form-main.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <main class="background-img">
+        <div class="container">
+            <div class="d-grid">
+                <div class="card-image">
+                    <div class="card-front">
+                        <img src="images/bg-card-front.png" alt="">
+                        <img class="card-logo" src="images/card-logo.svg" alt="">
+                        <span class="card-number">0000 0000 0000 0000</span>
+                        <span class="cardholder-name">JANE APPLESEED</span>
+                        <div class="card-date">
+                            <span class="card-month">00</span>/<span class="card-year">00</span>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <img src="images/bg-card-back.png" alt="">
+                        <span class="card-cvc">000</span>
+                    </div>
+                </div>
+                <div class="text-fields">
+                    <form action="#">
+                        <fieldset class="card-details">
+                            <legend class="visually-hidden">card details form</legend>
+                            <div class="d-flex flex-column">
+                                <label for="name">CARDHOLDER NAME</label>
+                                <input class="cardholder-name-input" type="text" name="name" id="name" maxlength="25"
+                                    placeholder="e.g. Jane Appleseed">
+                                <span class="error name-error hide clr-error"></span>
+                            </div>
+                            <div class="d-flex flex-column">
+                                <label for="number">CARD NUMBER</label>
+                                <input class="card-number-input" type="text" name="number" id="number" maxlength="19"
+                                    placeholder="e.g. 1234 5678 9123 0000">
+                                <span class="error number-error hide clr-error"></span>
+                            </div>
+                            <div class="d-flex flex-end gap-200">
+                                <fieldset class="d-flex flex-column date-wrapper">
+                                    <legend>EXP. DATE (MM/YY)</legend>
+                                    <div class="d-flex gap-100">
+                                        <input class="card-month-input" type="text" name="month" id="month"
+                                            maxlength="2" placeholder="MM">
+                                        <input class="card-year-input" type="text" name="year" id="year" maxlength="2"
+                                            placeholder="YY">
+                                    </div>
+                                </fieldset>
+                                <div class="cvc-wrapper d-flex flex-column">
+                                    <label for="cvc">CVC</label>
+                                    <input class="card-cvc-input" type="text" name="cvc" id="cvc" maxlength="3"
+                                        placeholder="e.g. 123">
+                                </div>
+                            </div>
+                            <div class="d-flex error-container">
+                                <span class="error date-error clr-error d-flex gap-100">
+                                    <span class="month-error hide"></span>
+                                    <span class="year-error hide"></span>
+                                </span>
+                                <span class="error cvc-error hide clr-error"></span>
+                            </div>
+                        </fieldset>
+
+                        <button type="submit"
+                            class="confirm form-button clr-white bg-clr-very-dark-violet">Confirm</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/6.4.3/imask.min.js"></script>
+    <script src="interactive-card-details-form-main.js"></script>
+</body>
+
+</html>

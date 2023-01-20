@@ -1,0 +1,422 @@
+@font-face {
+    font-family: "space-grotesk-medium";
+    src: url("fonts/SpaceGrotesk-Medium.ttf");
+}
+
+:root {
+
+    --clr-error-red: hsl(0, 100%, 66%);
+    --clr-active-input-1: hsl(249, 99%, 64%);
+    --clr-active-input-2: hsl(278, 94%, 30%);
+
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-light-grayish-violet: hsl(270, 3%, 87%);
+    --clr-dark-grayish-violet: hsl(279, 6%, 55%);
+    --clr-very-dark-violet: hsl(278, 68%, 11%);
+
+}
+
+/*----------------utility-classes----------------*/
+
+.clr-error { color: var(--clr-error-red);}
+.clr-white{ color: var(--clr-white);}
+.clr-light-grayish-violet { color: var(--clr-light-grayish-violet);}
+
+.bg-clr-very-dark-violet { background-color: var(--clr-very-dark-violet);}
+
+
+/*-----------reset------------*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font: inherit;
+}
+
+html,
+body {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 16px;
+    font-family: "space-grotesk-medium";
+    line-height: 1.5;
+}
+
+picture,
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+:focus {
+    outline: 0;
+}
+
+main {
+    min-height: 100%;
+}
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+
+}
+
+/*--------------layout---------------*/
+
+.hide {
+    display: none;
+}
+
+.border-clr-error {
+    border-color: var(--clr-error-red);
+}
+
+.error {
+    margin-top: .25rem;
+    font-size: 12px;
+}
+
+.error-container {
+    width: 100%;
+}
+
+.date-error {
+    width: 50%;
+}
+
+.date-error >* {
+    width: 50%;
+}
+
+.year-error {
+    margin-left: auto;
+}
+
+.cvc-error {
+    width: 47%;
+    margin-left: auto;
+}
+
+.container {
+    --max-width: 1150px;
+    --padding: 1rem;
+
+    width: min(var(--max-width),calc(100% - var(--padding)*2));
+    margin-inline: auto;
+    min-height: 100vh;
+}
+
+.background-img {
+    background-image: url("images/bg-main-mobile.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100% 33.3%;
+    background-origin: border-box;
+    padding-bottom: 6rem;
+}
+
+@media (min-width: 950px) {
+    .background-img {
+        background-image: url("images/bg-main-desktop.png");
+        background-repeat: no-repeat;
+        background-position: left;
+        background-size: 33.3% 100%;
+        padding-bottom: 0rem;
+    }
+}
+
+.d-grid {
+    padding: 2em 0;
+    display: grid;
+    gap: 2rem;
+    min-height: 100vh;
+}
+
+@media (max-width: 949px) {
+    .d-grid {
+        grid-template-rows: max-content max-content;
+    }
+}
+
+@media (min-width: 950px) {
+    .d-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.text-fields {
+    justify-self: center;
+    align-self: center;
+}
+
+@media (max-width: 949px) {
+    .text-fields {
+        align-self: flex-start;
+    }
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-end {
+    align-items: end;
+}
+
+.gap-100 {
+    gap: .75rem;
+}
+
+.gap-200 {
+    gap: 1.25rem;
+}
+
+form {
+    max-width: 25rem;
+}
+
+.card-details >*:not(:nth-last-child(-n+2)) {
+    margin-bottom: 1em;
+}
+
+
+/*----------------cards-layout----------t*/
+
+.card-image {
+    --card-width: 25rem;
+
+    position: relative;
+    max-width: 30rem;
+    width: 100%;
+    margin-inline: auto;
+    margin-top: 8rem;
+    margin-bottom: 12rem;
+}
+
+@media (max-width: 450px) {
+    .card-image {
+        --card-width: 20rem;
+        margin-top: 2rem;
+        margin-bottom: 8rem;
+    }
+}
+
+@media (min-width: 950px) {
+    .card-image {
+        --card-width: 25rem;
+        max-width: 100%;
+        display: grid;
+        gap: 2.5rem;
+        align-self: center;
+        justify-self: start;
+        margin-inline: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .card-image {
+        --card-width: 30rem;
+    }
+}
+
+.card-image >* {
+    box-shadow: 0 2rem 5rem 0.5rem #00000026;
+    width: fit-content;
+}
+
+.card-front {
+    position: relative;
+    max-width: var(--card-width);
+}
+
+@media (max-width: 949px) {
+    .card-front {
+        position: absolute;
+        z-index: 10;
+        top: 55%;
+    }
+}
+
+.card-front >*:not(:first-child) {
+    position: absolute;
+    color: var(--clr-white);
+}
+
+.card-logo {
+    top: 10%;
+    left: 8%;
+    width: 20%;
+}
+
+.card-number {
+    letter-spacing: 3px;
+    font-size: clamp(8px, 4vw, 24px);
+    top: 54%;
+    left: 8%;
+    width: 84%;
+}
+
+.cardholder-name {
+    letter-spacing: 2px;
+    font-size: clamp(8px, 3vw, 14px);
+    top: 80%;
+    left: 8%;
+    width: 50%;
+}
+
+.card-date {
+    letter-spacing: 2px;
+    font-size: clamp(8px, 3vw, 14px);
+    top: 80%;
+    right: 8%;
+}
+
+.card-back {
+    position: relative;
+    justify-self: end;
+    max-width: var(--card-width);
+    color: var(--clr-white);
+    margin-left: auto;
+}
+
+.card-back >*:not(:first-child) {
+    position: absolute;
+}
+
+.card-cvc {
+    letter-spacing: 2px;
+    font-size: clamp(8px, 3vw, 16px);
+    top: 44%;
+    right: 12%;
+}
+
+/*---------------form----------------*/
+
+fieldset {
+    border: none;
+}
+
+label,legend {
+    color: var(--clr-very-dark-violet);
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: .25rem;
+}
+
+input {
+    font-family: "space-grotesk-medium";
+    border: 1px solid var(--clr-light-grayish-violet);
+    border-radius: .5rem;
+    padding: .75em 1.5em;
+    color: var(--clr-very-dark-violet);
+    width: 100%;
+}
+
+@media (max-width: 399px) {
+    input {
+        padding: .75em .5em;
+        text-align: center;
+    }
+}
+
+input:focus {
+    border-color: transparent;
+    background-image: 
+    linear-gradient(white, white),
+    linear-gradient(to right,var(--clr-active-input-1), var(--clr-active-input-2));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+input::placeholder {
+    color: var(--clr-dark-grayish-violet);
+    opacity: .5;
+}
+
+.form-button {
+    width: 100%;
+    padding: .75em 1em;
+    border-radius: .5rem;
+    margin-top: 2.25rem;
+    border: 1px solid var(--clr-very-dark-violet);
+}
+
+.form-button:is(:focus-visible, :hover) {
+    color: var(--clr-very-dark-violet);
+    background-color: var(--clr-white);
+}
+
+.date-wrapper {
+    width: 50%;
+}
+
+.cvc-wrapper {
+    width: 50%;
+}
+
+/*-----------thank-you-card------------*/
+
+
+.thank-you-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 20rem;
+    margin-inline: auto;
+}
+
+.complete {
+    width: 4rem;
+    margin-bottom: 1.25em;
+}
+
+.title {
+    font-size: 26px;
+    letter-spacing: 3px;
+    color: var(--clr-very-dark-violet);
+}
+
+.thank-you-card p {
+    color: var(--clr-dark-grayish-violet);
+    opacity: .8;
+    margin-top: .5em;
+}
+
+.continue {
+    text-align: center;
+}
+
+
+
