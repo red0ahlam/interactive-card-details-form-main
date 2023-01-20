@@ -63,38 +63,13 @@ card_name_input.addEventListener('blur', (e)=> {
     checkError (validName ,input ,name_error, e.target);
 });
 
-// let previous_number_input = '';
-
-// var patternMask = IMask(card_number_input, {
-//     mask: '**** **** **** ****'
-// });
+var patternMask = IMask(card_number_input, {
+    mask: '**** **** **** ****'
+});
 
 card_number_input.addEventListener('input', ()=> {
     let input = card_number_input.value;
-    // let og_input = input.replace(/\s/g, '');
-    // if ((og_input.length == 16)) {
-    //     og_input = og_input.split("");
-
-    //     let subString1 = og_input.slice(0,4);
-    //     subString1.push(" ");
-    //     let subString2 = og_input.slice(4,8);
-    //     subString2.push(" ");
-    //     let subString3 = og_input.slice(8,12);
-    //     subString3.push(" ");
-    //     let subString4 = og_input.slice(12,16);
-
-    //     og_input = subString1.concat(subString2,subString3,subString4).join("");
-    //     card_number_input.value = og_input;
-    //     card_number.innerHTML = og_input;
-    //     input = og_input;
-    //     og_input = og_input.replace(/\s/g,'');
-
-    // }else if ((og_input.length % 4 == 0) && (og_input.length < 16) && (previous_number_input.length < og_input.length)) {
-    //     input = input + " ";
-    //     card_number_input.value = input;
-    // }
-    writeToCard(input,card_number);  
-    // previous_number_input = og_input;
+    writeToCard(input,card_number);
 });
 
 card_number_input.addEventListener('keypress', (event)=> {
@@ -132,7 +107,6 @@ let currentYear = new Date().getFullYear();
     currentYear = Number(currentYear);
 
 let currentMonth = new Date().getMonth() + 1 ;
-// let currentMonth = 5;
 
 card_month_input.addEventListener('input', ()=> {
     let input = card_month_input.value;
@@ -261,4 +235,3 @@ form[0].addEventListener('submit', (e)=> {
         });
     }
 });
-
