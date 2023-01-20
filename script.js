@@ -231,7 +231,7 @@ form[0].addEventListener('submit', (e)=> {
         grid.appendChild(thanks);
         const continue_btn = document.querySelector('.continue');
         continue_btn.addEventListener('click', ()=> {
-            continue_btn.setAttribute('href','index.html');
+           window.location.href = 'index.html';
         });
     }
 });
