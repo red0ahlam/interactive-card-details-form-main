@@ -226,12 +226,9 @@ form[0].addEventListener('submit', (e)=> {
          `  <img class="complete" src="images/icon-complete.svg" alt="">
             <span class="title">THANK YOU</span>
             <p>We've added your card details</p>
-            <a href="interactive-card-details-form-main.html"
+            <a href="index.html"
             class="continue form-button clr-white bg-clr-very-dark-violet">Continue</a> `
         grid.appendChild(thanks);
         const continue_btn = document.querySelector('.continue');
-        continue_btn.addEventListener('click', ()=> {
-           window.location.href = 'index.html';
-        });
     }
 });
